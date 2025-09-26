@@ -1,0 +1,26 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class EndGame : MonoBehaviour
+{
+  public Text text;
+  public Button restartBtn;
+  public Button quitBtn;
+
+  private void Start()
+  {
+    text.text = "SCORE: " + GameManager.Instance.Score;
+    restartBtn.onClick.AddListener(delegate { SceneManager.LoadScene(1); });
+    quitBtn.onClick.AddListener(delegate { Application.Quit(); });
+  }
+
+  private void OnDestroy()
+  {
+    restartBtn.onClick.RemoveAllListeners();
+    quitBtn.onClick.RemoveAllListeners();
+  }
+}

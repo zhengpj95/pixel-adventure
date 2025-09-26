@@ -39,4 +39,12 @@ public class PlayerLife : MonoBehaviour
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
+
+  private void Update()
+  {
+    if (transform.position.y < -20)
+    {
+      RestartLevel();
+    }
+  }
 }

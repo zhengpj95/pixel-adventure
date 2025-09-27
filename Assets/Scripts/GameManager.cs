@@ -20,4 +20,5 @@ public class GameManager
   }
 
   public int Score = 0;
+  public int TempScore = 0; // 每关卡得到的分数
 }

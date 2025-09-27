@@ -14,7 +14,12 @@ public class EndGame : MonoBehaviour
   private void Start()
   {
     text.text = "SCORE: " + GameManager.Instance.Score;
-    restartBtn.onClick.AddListener(delegate { SceneManager.LoadScene(1); });
+    restartBtn.onClick.AddListener(delegate
+    {
+      SceneManager.LoadScene(1);
+      GameManager.Instance.Score = 0;
+      GameManager.Instance.TempScore = 0;
+    });
     quitBtn.onClick.AddListener(delegate { Application.Quit(); });
   }
 

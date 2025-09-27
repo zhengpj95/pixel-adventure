@@ -13,7 +13,7 @@ public class ItemCollector : MonoBehaviour
   public Text cherriesText;
   public AudioSource audio;
 
-  private int _cherries = GameManager.Instance.Score;
+  private int _cherries = 0;
 
   private void OnTriggerEnter2D(Collider2D other)
   {
@@ -22,8 +22,8 @@ public class ItemCollector : MonoBehaviour
       audio.Play();
       Destroy(other.gameObject);
       _cherries++;
-      cherriesText.text = "Cherries: " + _cherries;
-      GameManager.Instance.Score = _cherries;
+      cherriesText.text = "Cherries: " + (GameManager.Instance.Score + _cherries);
+      GameManager.Instance.TempScore = _cherries;
     }
   }
 }

@@ -18,6 +18,9 @@ public class Finish : MonoBehaviour
   {
     if (other.gameObject.name == "Player" && !_levelComplete)
     {
+      // 每关到达终点时候，再计算总分
+      GameManager.Instance.Score += GameManager.Instance.TempScore;
+      GameManager.Instance.TempScore = 0;
       _audio?.Play();
       _levelComplete = true;
       Invoke("CompleteLevel", 2f);

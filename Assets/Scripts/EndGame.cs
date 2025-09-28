@@ -16,7 +16,7 @@ public class EndGame : MonoBehaviour
     text.text = "SCORE: " + GameManager.Instance.Score;
     restartBtn.onClick.AddListener(delegate
     {
-      SceneManager.LoadScene(1);
+      SceneManager.LoadScene(SceneUIName.Level1);
       GameManager.Instance.Score = 0;
       GameManager.Instance.TempScore = 0;
     });

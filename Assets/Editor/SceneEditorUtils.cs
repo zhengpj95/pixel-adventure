@@ -1,13 +1,15 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
-using UnityEngine.SceneManagement;
 
-public static class SceneEditorUtils
+namespace Editor
 {
-  [MenuItem("Scene/打开游戏启动场景")]
-  private static void OpenGameStartScene()
+  public static class SceneEditorUtils
   {
-    EditorSceneManager.OpenScene("Assets/Scenes/Start.scene", OpenSceneMode.Single);
-    EditorApplication.isPlaying = true;
+    [MenuItem("Scene/打开游戏启动场景")]
+    private static void OpenGameStartScene()
+    {
+      EditorSceneManager.OpenScene("Assets/Scenes/Start.scene", OpenSceneMode.Single);
+      EditorApplication.isPlaying = true;
+    }
   }
 }

@@ -45,20 +45,22 @@
     <Analyzer Include="C:\Program Files\Tuanjie\Hub\Editor\2022.3.61t5\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Manager\BgmManager.cs" />
     <Compile Include="Assets\Scripts\Finish.cs" />
     <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\StickyPlatform.cs" />
+    <Compile Include="Assets\Scripts\Singleton\SingletonMono.cs" />
     <Compile Include="Assets\Simple 2D Platformer BE2\BE2Player.cs" />
     <Compile Include="Assets\Scripts\SceneUIName.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\BgmManager.cs" />
     <Compile Include="Assets\Scripts\WayPointFollower.cs" />
     <Compile Include="Assets\Scripts\PlayerLife.cs" />
+    <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scripts\ItemCollector.cs" />
+    <Compile Include="Assets\Scripts\Singleton\Singleton.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Tuanjie\Hub\Editor\2022.3.61t5\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

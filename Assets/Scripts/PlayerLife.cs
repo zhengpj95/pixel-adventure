@@ -42,7 +42,7 @@ public class PlayerLife : MonoBehaviour
 
   private void Update()
   {
-    if (transform.position.y < -20)
+    if (transform.position.y < -10)
     {
       RestartLevel();
     }

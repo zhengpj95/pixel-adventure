@@ -387,7 +387,7 @@ GameObject:
   serializedVersion: 7
   m_Component:
   - component: {fileID: 822711470}
-  - component: {fileID: 822711471}
+  - component: {fileID: 822711473}
   m_Layer: 0
   m_HasEditorInfo: 1
   m_Name: BGM
@@ -411,7 +411,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &822711471
+--- !u!82 &822711473
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

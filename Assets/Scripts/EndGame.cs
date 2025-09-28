@@ -13,6 +13,7 @@ public class EndGame : MonoBehaviour
 
   private void Start()
   {
+    BGMManager.Instance.StopBGM();
     text.text = "SCORE: " + GameManager.Instance.Score;
     restartBtn.onClick.AddListener(delegate
     {

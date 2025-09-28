@@ -854,6 +854,9 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>

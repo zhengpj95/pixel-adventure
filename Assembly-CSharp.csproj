@@ -53,6 +53,7 @@
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\BgmManager.cs" />
     <Compile Include="Assets\Scripts\WayPointFollower.cs" />
     <Compile Include="Assets\Scripts\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\StartGame.cs" />
@@ -213,6 +214,9 @@
     </Reference>
     <Reference Include="UnityEngine.UIElementsModule">
       <HintPath>C:\Program Files\Tuanjie\Hub\Editor\2022.3.61t5\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>C:\Program Files\Tuanjie\Hub\Editor\2022.3.61t5\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityAnalyticsModule">
       <HintPath>C:\Program Files\Tuanjie\Hub\Editor\2022.3.61t5\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
@@ -804,6 +808,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>

@@ -1,21 +1,15 @@
 using UnityEngine;
 
-public class BGMManager : MonoBehaviour
+public class BGMManager : SingletonMono<BGMManager>
 {
-  public static BGMManager Instance { get; private set; }
   private AudioSource _audioSource;
 
   public AudioClip defaultClip;
 
-  private void Awake()
+  protected override void Awake()
   {
-    if (Instance != null && Instance != this)
-    {
-      Destroy(gameObject);
-      return;
-    }
+    base.Awake();
 
-    Instance = this;
     DontDestroyOnLoad(gameObject); // 不销毁
 
     _audioSource = gameObject.GetComponent<AudioSource>();

@@ -8,6 +8,8 @@ public class StartGame : MonoBehaviour
 {
   private void Start()
   {
+    AudioClip clip = Resources.Load<AudioClip>("CasualGameSounds/356-8-bit-chiptune-game-music-357518");
+    BGMManager.Instance.PlayBGM(clip);
     UIManager.Instance.ShowUI("UI/SettingUI", LayerIndex.Tip);
   }
 

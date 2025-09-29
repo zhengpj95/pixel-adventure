@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,13 +18,20 @@ public class Player : MonoBehaviour
   public LayerMask jumpableGround;
 
   public AudioSource jumpSound;
-  
+
   private enum MovementState
   {
     Idle,
     Running,
     Jumping,
     Falling,
+  }
+
+  private void Awake()
+  {
+    // 创建角色后，播放音乐
+    AudioClip clip = Resources.Load<AudioClip>("CasualGameSounds/mobile-casual-video-game-music-158301");
+    BGMManager.Instance.PlayBGM(clip);
   }
 
   public void Start()

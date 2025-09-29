@@ -51,7 +51,6 @@
     <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\StickyPlatform.cs" />
     <Compile Include="Assets\Scripts\Singleton\SingletonMono.cs" />
-    <Compile Include="Assets\Simple 2D Platformer BE2\BE2Player.cs" />
     <Compile Include="Assets\Scripts\SceneUIName.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
@@ -712,11 +711,17 @@
     <Reference Include="Unity.2D.Common.Path.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -775,6 +780,9 @@
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
     </Reference>
@@ -826,8 +834,14 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

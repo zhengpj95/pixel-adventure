@@ -10,8 +10,6 @@ public class BGMManager : SingletonMono<BGMManager>
   {
     base.Awake();
 
-    DontDestroyOnLoad(gameObject); // 不销毁
-
     _audioSource = gameObject.GetComponent<AudioSource>();
     if (_audioSource == null)
       _audioSource = gameObject.AddComponent<AudioSource>();

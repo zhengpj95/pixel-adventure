@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
 
   public void Start()
   {
+    UIManager.Instance.ShowUI("UI/ItemCollectorUI", LayerIndex.Model);
+
     _rb2d = GetComponent<Rigidbody2D>();
     _coll = GetComponent<BoxCollider2D>();
     _sprite = GetComponent<SpriteRenderer>();

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Manager\BgmManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\MessageCenter.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolObject.cs" />
     <Compile Include="Assets\Scripts\Finish.cs" />
@@ -53,9 +54,11 @@
     <Compile Include="Assets\Scripts\StickyPlatform.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Singleton\SingletonMono.cs" />
+    <Compile Include="Assets\Scripts\def\GameEvent.cs" />
     <Compile Include="Assets\Scripts\SceneUIName.cs" />
     <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\ItemCollectorUI.cs" />
     <Compile Include="Assets\Scripts\WayPointFollower.cs" />
     <Compile Include="Assets\Test\TestPool.cs" />
     <Compile Include="Assets\Scripts\PlayerLife.cs" />

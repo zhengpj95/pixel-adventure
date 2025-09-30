@@ -13,6 +13,8 @@ public class EndGame : MonoBehaviour
 
   private void Start()
   {
+    UIManager.Instance.HideUI("UI/ItemCollectorUI"); //
+    Debug.Log("EndGame::HideUI...");
     BGMManager.Instance.StopBGM();
     text.text = "SCORE: " + GameManager.Instance.Score;
     restartBtn.onClick.AddListener(delegate

@@ -10,19 +10,15 @@ using UnityEngine.UI;
  */
 public class ItemCollector : MonoBehaviour
 {
-  public Text cherriesText;
-  public AudioSource audio;
-
   private int _cherries = 0;
 
   private void OnTriggerEnter2D(Collider2D other)
   {
     if (other.gameObject.CompareTag("Cherry"))
     {
-      audio.Play();
       Destroy(other.gameObject);
       _cherries++;
-      cherriesText.text = "Cherries: " + (GameManager.Instance.Score + _cherries);
+      MessageCenter.Dispatch(GameEvent.Cherries, GameManager.Instance.Score + _cherries);
       GameManager.Instance.TempScore = _cherries;
     }
   }

@@ -14,11 +14,13 @@ public abstract class SingletonMono<T> : MonoBehaviour where T : MonoBehaviour
   {
     get
     {
-      if (_instance != null) return _instance;
+      if (_instance) return _instance;
+      // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
       _instance = FindObjectOfType<T>();
-      if (_instance != null) return _instance;
+      if (_instance) return _instance;
       var obj = new GameObject(typeof(T).Name);
-      _instance = obj.AddComponent<T>();
+      // ReSharper disable once Unity.PerformanceCriticalCodeInvocation
+      _instance = obj?.AddComponent<T>();
       DontDestroyOnLoad(obj); // 跨场景保留
       return _instance;
     }

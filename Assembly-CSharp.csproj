@@ -46,29 +46,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Manager\BgmManager.cs" />
+    <Compile Include="Assets\Scripts\common\Rotate.cs" />
     <Compile Include="Assets\Scripts\Manager\MessageCenter.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolObject.cs" />
     <Compile Include="Assets\Scripts\Finish.cs" />
+    <Compile Include="Assets\Scripts\common\StickyPlatform.cs" />
     <Compile Include="Assets\Scripts\EndGame.cs" />
-    <Compile Include="Assets\Scripts\StickyPlatform.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Singleton\SingletonMono.cs" />
+    <Compile Include="Assets\Scripts\def\SceneUIName.cs" />
+    <Compile Include="Assets\Scripts\common\Camera.cs" />
     <Compile Include="Assets\Scripts\def\GameEvent.cs" />
-    <Compile Include="Assets\Scripts\SceneUIName.cs" />
-    <Compile Include="Assets\Scripts\Camera.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ItemCollectorUI.cs" />
-    <Compile Include="Assets\Scripts\WayPointFollower.cs" />
     <Compile Include="Assets\Test\TestPool.cs" />
     <Compile Include="Assets\Scripts\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\Launcher\LoadingUI.cs" />
     <Compile Include="Assets\Test\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scripts\Launcher\Launcher.cs" />
     <Compile Include="Assets\Scripts\ItemCollector.cs" />
+    <Compile Include="Assets\Scripts\common\WayPointFollower.cs" />
     <Compile Include="Assets\Scripts\Singleton\Singleton.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Tuanjie\Hub\Editor\2022.3.61t5\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -715,11 +715,11 @@
     <Reference Include="Unity.Burst">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Path.Editor">
-      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.ResourceManager">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Path.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -832,8 +832,8 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -847,8 +847,8 @@
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

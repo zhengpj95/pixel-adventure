@@ -5,7 +5,7 @@ using System.IO;
 
 public static class SceneNameGenerator
 {
-  private const string FilePath = "Assets/Scripts/SceneUIName.cs";
+  private const string FilePath = "Assets/Scripts/def/SceneUIName.cs";
 
   [MenuItem("Scene/生成SceneUIName")]
   public static void Generate()

@@ -32,8 +32,7 @@ public class UIManager : SingletonMono<UIManager>
     if (!_uiCache.ContainsKey(prefabPath))
     {
       GameObject prefab = Resources.Load<GameObject>(prefabPath);
-      Debug.Log("11111 + " + prefabPath);
-      Debug.Log(prefab);
+      Debug.Log("UIManager.ShowUI: " + prefabPath);
       if (prefab == null)
       {
         Debug.LogError("prefab is null");

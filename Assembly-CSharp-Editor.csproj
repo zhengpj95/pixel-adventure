@@ -749,11 +749,11 @@
     <Reference Include="Unity.Burst">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Path.Editor">
-      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.ResourceManager">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Path.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -866,8 +866,8 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -881,8 +881,8 @@
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>E:\u3d\Pixel Adventure\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

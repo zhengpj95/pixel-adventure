@@ -1,7 +1,7 @@
 ﻿/**
  * 事件静态类
  */
-public class GameEvent
+public static class GameEvent
 {
   public const string Cherries = "Cherries";
 }

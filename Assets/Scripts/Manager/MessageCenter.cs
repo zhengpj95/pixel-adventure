@@ -1,55 +1,81 @@
 using System;
 using System.Collections.Generic;
 
-/// <summary>
-/// 游戏全局消息中心（字符串 Key 版）
-/// 支持泛型参数
-/// </summary>
+/**
+ * 全局消息中心（支持无参与有参事件）
+ * 游戏全局消息中心（字符串 Key 版）
+ * 支持泛型参数
+ */
 public static class MessageCenter
 {
-  private static readonly Dictionary<string, Delegate> eventTable = new();
+  // 用字符串为 key 的事件表
+  private static readonly Dictionary<string, Delegate> EventTable = new();
 
-  /// <summary>
-  /// 添加监听
-  /// </summary>
+  #region --- 添加监听 ---
+
+  public static void AddListener(string eventName, Action listener)
+  {
+    if (!EventTable.ContainsKey(eventName))
+      EventTable[eventName] = null;
+
+    EventTable[eventName] = (Action)EventTable[eventName] + listener;
+  }
+
   public static void AddListener<T>(string eventName, Action<T> listener)
   {
-    if (!eventTable.ContainsKey(eventName))
+    if (!EventTable.ContainsKey(eventName))
     {
-      eventTable[eventName] = null;
+      EventTable[eventName] = null;
     }
 
-    eventTable[eventName] = (Action<T>)eventTable[eventName] + listener;
+    EventTable[eventName] = (Action<T>)EventTable[eventName] + listener;
   }
 
-  /// <summary>
-  /// 移除监听
-  /// </summary>
+  #endregion
+
+  #region --- 移除监听 ---
+
+  public static void RemoveListener(string eventName, Action listener)
+  {
+    if (EventTable.ContainsKey(eventName))
+      EventTable[eventName] = (Action)EventTable[eventName] - listener;
+  }
+
   public static void RemoveListener<T>(string eventName, Action<T> listener)
   {
-    if (eventTable.ContainsKey(eventName))
+    if (EventTable.ContainsKey(eventName))
     {
-      eventTable[eventName] = (Action<T>)eventTable[eventName] - listener;
+      EventTable[eventName] = (Action<T>)EventTable[eventName] - listener;
     }
   }
 
-  /// <summary>
-  /// 派发事件
-  /// </summary>
+  #endregion
+
+  #region --- 派发事件 ---
+
+  public static void Dispatch(string eventName)
+  {
+    if (EventTable.ContainsKey(eventName))
+    {
+      var action = EventTable[eventName] as Action;
+      action?.Invoke();
+    }
+  }
+
   public static void Dispatch<T>(string eventName, T arg)
   {
-    if (eventTable.ContainsKey(eventName))
+    if (EventTable.ContainsKey(eventName))
     {
-      var action = eventTable[eventName] as Action<T>;
+      var action = EventTable[eventName] as Action<T>;
       action?.Invoke(arg);
     }
   }
 
-  /// <summary>
-  /// 清空所有事件（场景切换时调用）
-  /// </summary>
+  #endregion
+
+  // 清空所有事件（场景切换时调用）
   public static void ClearAll()
   {
-    eventTable.Clear();
+    EventTable.Clear();
   }
 }

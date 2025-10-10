@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\Singleton\SingletonMono.cs" />
     <Compile Include="Assets\Scripts\def\SceneUIName.cs" />
     <Compile Include="Assets\Scripts\common\Camera.cs" />
+    <Compile Include="Assets\KrishnaPalacio\MinifantasyCommon\Scripts\AnimatedObjectsGroup.cs" />
     <Compile Include="Assets\Scripts\def\GameEvent.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ItemCollectorUI.cs" />
@@ -70,6 +71,13 @@
     <Compile Include="Assets\Scripts\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\common\WayPointFollower.cs" />
     <Compile Include="Assets\Scripts\Singleton\Singleton.cs" />
+    <Compile Include="Assets\KrishnaPalacio\MinifantasyCommon\Scripts\CameraController.cs" />
+    <Compile Include="Assets\KrishnaPalacio\MinifantasyCommon\Scripts\SetAnimatorParameter.cs" />
+    <None Include="Assets\KrishnaPalacio\Dungeon\DUN Documentation.txt" />
+    <None Include="Assets\KrishnaPalacio\Forgotten Plains\Sprites\Tileset\River\Waterfall\WaterfalTilesInfo.txt" />
+    <None Include="Assets\KrishnaPalacio\Forgotten Plains\FP Documentation.txt" />
+    <None Include="Assets\KrishnaPalacio\Forgotten Plains\Sprites\Tileset\River\RiverTilesInfo.txt" />
+    <None Include="Assets\KrishnaPalacio\Forgotten Plains\Sprites\Tileset\WaterTilesInfo.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Tuanjie\Hub\Editor\2022.3.61t5\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

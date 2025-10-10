@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Finish : MonoBehaviour
+public class CheckPoint : MonoBehaviour
 {
   private AudioSource _audio;
   private bool _levelComplete = false;

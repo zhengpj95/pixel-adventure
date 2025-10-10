@@ -50,7 +50,7 @@
     <Compile Include="Assets\Scripts\Manager\MessageCenter.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolObject.cs" />
-    <Compile Include="Assets\Scripts\Finish.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\common\StickyPlatform.cs" />
     <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolManager.cs" />

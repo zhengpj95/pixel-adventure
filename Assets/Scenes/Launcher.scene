@@ -154,7 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f58cbf2f9dab4f849a04dc3a814a0579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultClip: {fileID: 0}
+  defaultBgm: {fileID: 0}
+  bgmVolume: 1
+  sfxVolume: 1
 --- !u!4 &61758822
 Transform:
   m_ObjectHideFlags: 0

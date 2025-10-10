@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
   public float jumpForce = 7f;
   public LayerMask jumpableGround;
 
-  public AudioSource jumpSound;
+  private AudioClip _jumpSound;
 
   private enum MovementState
   {
@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     // 创建角色后，播放音乐
     AudioClip clip = Resources.Load<AudioClip>("CasualGameSounds/mobile-casual-video-game-music-158301");
     BGMManager.Instance.PlayBGM(clip);
+
+    AudioClip sfx = Resources.Load<AudioClip>("CasualGameSounds/cartoon-jump-6462");
+    _jumpSound = sfx;
   }
 
   public void Start()
@@ -51,7 +54,7 @@ public class Player : MonoBehaviour
 
     if (Input.GetButtonDown("Jump") && IsGrounded())
     {
-      jumpSound.Play();
+      BGMManager.Instance.PlaySfx(_jumpSound);
       _rb2d.velocity = new Vector2(_rb2d.velocity.x, jumpForce);
     }
 

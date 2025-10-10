@@ -15,7 +15,7 @@ public class EndGame : MonoBehaviour
   {
     UIManager.Instance.HideUI("UI/ItemCollectorUI"); //
     Debug.Log("EndGame::HideUI...");
-    BGMManager.Instance.StopBGM();
+    AudioManager.Instance.Stop();
     text.text = "SCORE: " + GameManager.Instance.Score;
     restartBtn.onClick.AddListener(delegate
     {

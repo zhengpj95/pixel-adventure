@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cherriesText: {fileID: 6511271732266486092}
-  audio: {fileID: 4022883373511378821}
+  collectSound: {fileID: 4022883373511378821}
 --- !u!82 &4022883373511378821
 AudioSource:
   m_ObjectHideFlags: 0

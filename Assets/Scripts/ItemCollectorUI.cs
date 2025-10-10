@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ItemCollectorUI : MonoBehaviour
 {
   public Text cherriesText;
-  public AudioSource audio;
+  public AudioSource collectSound;
 
   private void OnEnable()
   {
@@ -22,7 +23,7 @@ public class ItemCollectorUI : MonoBehaviour
 
   private void OnCherriesUpdate(int cherries)
   {
-    audio.Play();
+    collectSound.Play();
     cherriesText.text = cherries.ToString();
   }
 }

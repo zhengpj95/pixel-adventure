@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGMManager : SingletonMono<BGMManager>
+public class AudioManager : SingletonMono<AudioManager>
 {
   [Header("默认背景音乐")] 
   public AudioClip defaultBgm;
@@ -12,7 +12,7 @@ public class BGMManager : SingletonMono<BGMManager>
   [Range(0f, 1f)] public float sfxVolume = 1f;
 
   private AudioSource _bgmSource;
-  private readonly List<AudioSource> _sfxSources = new List<AudioSource>();
+  private readonly List<AudioSource> _sfxSources = new();
 
   protected override void Awake()
   {
@@ -36,7 +36,7 @@ public class BGMManager : SingletonMono<BGMManager>
 
   #region === BGM ===
 
-  public void PlayBGM(AudioClip clip)
+  private void PlayBGM(AudioClip clip)
   {
     if (clip == null) return;
     if (_bgmSource.clip == clip && _bgmSource.isPlaying) return;
@@ -46,20 +46,26 @@ public class BGMManager : SingletonMono<BGMManager>
     _bgmSource.Play();
   }
 
+  public void PlayBGM(string soundType)
+  {
+    var clip = Resources.Load<AudioClip>("Sound/" + soundType);
+    PlayBGM(clip);
+  }
+
   public void StopBGM()
   {
     _bgmSource.Stop();
   }
 
-  #endregion
+  #endregion =====================
 
   #region === SFX ===
 
   // ReSharper disable Unity.PerformanceAnalysis
-  public void PlaySfx(AudioClip clip, bool loop = false)
+  private void PlaySfx(AudioClip clip, bool loop = false)
   {
     if (clip == null) return;
-    AudioSource sfx = gameObject.AddComponent<AudioSource>();
+    var sfx = gameObject.AddComponent<AudioSource>();
     sfx.clip = clip;
     sfx.loop = loop;
     sfx.volume = sfxVolume;
@@ -71,6 +77,12 @@ public class BGMManager : SingletonMono<BGMManager>
     {
       StartCoroutine(DestroyAfterPlay(sfx));
     }
+  }
+
+  public void PlaySfx(string soundType)
+  {
+    var clip = Resources.Load<AudioClip>("Sound/" + soundType);
+    PlaySfx(clip);
   }
 
   private IEnumerator DestroyAfterPlay(AudioSource sfx)
@@ -91,5 +103,11 @@ public class BGMManager : SingletonMono<BGMManager>
     }
   }
 
-  #endregion
+  #endregion =====================
+
+  public void Stop()
+  {
+    StopBGM();
+    StopAllSfx();
+  }
 }

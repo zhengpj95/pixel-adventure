@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 /**
  * 角色声明周期，死亡处理和复活
  */
 public class PlayerLife : MonoBehaviour
 {
-  public AudioSource audio;
+  public AudioSource deathSound;
 
   private Rigidbody2D _rb;
   private Animator _anim;
@@ -24,7 +25,7 @@ public class PlayerLife : MonoBehaviour
   {
     if (other.gameObject.CompareTag("Trap"))
     {
-      audio.Play();
+      deathSound.Play();
       Die();
     }
   }

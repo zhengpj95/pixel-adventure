@@ -38,7 +38,7 @@ public class TagLayerGenerator : EditorWindow
     foreach (string tag in tags)
     {
       string fieldName = SanitizeIdentifier(tag);
-      sb.AppendLine($"    public const string {fieldName} = \"{tag}\";");
+      sb.AppendLine($"  public const string {fieldName} = \"{tag}\";");
     }
 
     sb.AppendLine("}");
@@ -61,7 +61,7 @@ public class TagLayerGenerator : EditorWindow
     {
       string fieldName = SanitizeIdentifier(layer);
       int layerIndex = LayerMask.NameToLayer(layer);
-      sb.AppendLine($"    public const int {fieldName} = {layerIndex};");
+      sb.AppendLine($"  public const int {fieldName} = {layerIndex};");
     }
 
     sb.AppendLine("}");

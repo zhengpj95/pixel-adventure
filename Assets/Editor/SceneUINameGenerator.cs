@@ -3,11 +3,11 @@ using UnityEngine;
 using System.IO;
 
 
-public static class SceneNameGenerator
+public static class SceneUINameGenerator
 {
   private const string FilePath = "Assets/Scripts/def/SceneUIName.cs";
 
-  [MenuItem("Scene/生成SceneUIName")]
+  [MenuItem("Scene/SceneUIName Generator")]
   public static void Generate()
   {
     var scenes = EditorBuildSettings.scenes;
@@ -18,8 +18,9 @@ public static class SceneNameGenerator
     }
 
     string code = "/**\n";
-    code += " * 此文件自动生成，请勿手动修改\n";
-    code += " */\n";
+    code += " * 自动生成的 SceneUIName 常量类\n";
+    code += " * 请勿手动修改！使用 Scene/SceneUIName Generator 重新生成\n";
+    code += " */\n\n";
     code += "public static class SceneUIName\n";
     code += "{\n";
 

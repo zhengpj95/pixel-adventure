@@ -26,16 +26,17 @@ public class RpgPlayerMovement : MonoBehaviour
   {
     _moveInput = value.Get<Vector2>();
 
-
-    // 设置翻转
-    if (_moveInput.x > 0f)
-      _sprite.flipX = false;
-    else if (_moveInput.x < 0f) _sprite.flipX = true;
-
     // 设置idle和walk
     if (_moveInput != Vector2.zero)
+    {
       _animator.SetBool("isWalking", true);
+      // 设置翻转
+      if (_moveInput.x > 0f) _sprite.flipX = false;
+      else if (_moveInput.x < 0f) _sprite.flipX = true;
+    }
     else
+    {
       _animator.SetBool("isWalking", false);
+    }
   }
 }

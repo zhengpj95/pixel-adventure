@@ -39,6 +39,7 @@ public class PlayerLife : MonoBehaviour
   private void RestartLevel()
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    MessageCenter.Dispatch(GameEvent.Cherries, GameManager.Instance.Score); // 死亡重置分数
   }
 
   private void Update()

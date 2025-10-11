@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Launcher.scene
     guid: fde40b4fedd704d49b4f00e901a2c129
   - enabled: 1
-    path: Assets/Scenes/Start.scene
+    path: Assets/Scenes/StartGame.scene
     guid: ffc2b64d1546a3247ae10df03e3f5f58
   - enabled: 1
     path: Assets/Scenes/Level1.scene
@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level3.scene
     guid: 30294c54ccde61646a3fcd26ebebc2bb
   - enabled: 1
-    path: Assets/Scenes/End.scene
+    path: Assets/Scenes/EndGame.scene
     guid: 879cc708558fea24da0905495039be91
   m_BuildProfiles: []
   m_configObjects:

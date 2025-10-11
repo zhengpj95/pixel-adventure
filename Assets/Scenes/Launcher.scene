@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efd7beb6bc26c04490189679b6f20f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSceneName: Scenes/Start
+  firstSceneName: Scenes/StartGame
   loadingUI: {fileID: 610033278}
 --- !u!1 &1515130312
 GameObject:

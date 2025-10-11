@@ -62,8 +62,8 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ItemCollectorUI.cs" />
     <Compile Include="Assets\Test\TestPool.cs" />
-    <Compile Include="Assets\Scripts\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\Launcher\LoadingUI.cs" />

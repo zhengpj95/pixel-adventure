@@ -20,6 +20,12 @@ public class RpgPlayerMovement : MonoBehaviour
   private void FixedUpdate()
   {
     _rb2d.AddForce(_moveInput * moveSpeed);
+  }
+
+  public void OnMove(InputValue value)
+  {
+    _moveInput = value.Get<Vector2>();
+
 
     // 设置翻转
     if (_moveInput.x > 0f)
@@ -31,10 +37,5 @@ public class RpgPlayerMovement : MonoBehaviour
       _animator.SetBool("isWalking", true);
     else
       _animator.SetBool("isWalking", false);
-  }
-
-  public void OnMove(InputValue value)
-  {
-    _moveInput = value.Get<Vector2>();
   }
 }

@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RpgPlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-  public float moveSpeed = 5f;
+  public float moveSpeed = 500f;
+
   private Animator _animator;
   private Vector2 _moveInput;
-
   private Rigidbody2D _rb2d;
   private SpriteRenderer _sprite;
 
@@ -31,12 +31,35 @@ public class RpgPlayerMovement : MonoBehaviour
     {
       _animator.SetBool("isWalking", true);
       // 设置翻转
-      if (_moveInput.x > 0f) _sprite.flipX = false;
-      else if (_moveInput.x < 0f) _sprite.flipX = true;
+      if (_moveInput.x > 0f)
+      {
+        _sprite.flipX = false;
+        gameObject.BroadcastMessage("IsFacingRight", true);
+      }
+      else if (_moveInput.x < 0f)
+      {
+        _sprite.flipX = true;
+        gameObject.BroadcastMessage("IsFacingRight", false);
+      }
     }
     else
     {
       _animator.SetBool("isWalking", false);
     }
+  }
+
+  private void OnFire()
+  {
+    _animator.SetTrigger("swordAttack");
+  }
+
+  public void OnDamage()
+  {
+    // _animator.SetTrigger("isDamage");
+  }
+
+  public void OnDie()
+  {
+    _animator.SetTrigger("isDie");
   }
 }

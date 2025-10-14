@@ -20,12 +20,12 @@ public class PlayerSword : MonoBehaviour
       var position = transform.parent.position;
       Vector2 direction = other.transform.position - position;
 
-      damageable.OnHit(1, direction.normalized * 1000);
 
       // 伤害飘字
       var damage = Random.Range(1, 10);
       var isCritical = Random.Range(0, 100) < 30;
       if (isCritical) damage *= 2;
+      damageable.OnHit(damage, direction.normalized * 1000);
       DamagePopup.Create(other.transform.position, damage, isCritical);
     }
   }

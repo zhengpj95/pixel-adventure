@@ -57,7 +57,8 @@ public class EnemyMovement : MonoBehaviour
     {
       Vector2 direction = collider.transform.position - transform.position;
       var force = direction.normalized * 100;
-      damageable.OnHit(1, force);
+      var damage = Random.Range(1, 10);
+      damageable.OnHit(damage, force);
     }
   }
 

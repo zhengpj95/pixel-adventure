@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamagePopup : MonoBehaviour
 {
+  private const float DisappearTimerMax = 1f;
   private static int _sortingOrder;
   public float disappearTimer = 2f;
   public float disappearSpeed = 1f;
@@ -21,6 +22,21 @@ public class DamagePopup : MonoBehaviour
   private void Update()
   {
     transform.position += _moveVector * Time.deltaTime;
+
+    // 修改飘字动画效果，速度放大，然后缩小
+    _moveVector -= _moveVector * (7 * Time.deltaTime);
+    if (disappearTimer > DisappearTimerMax * 0.5f)
+    {
+      const float increaseScaleAmount = 1f;
+      transform.localScale += Vector3.one * (increaseScaleAmount * Time.deltaTime);
+    }
+    else
+    {
+      const float increaseScaleAmount = 1f;
+      transform.localScale -= Vector3.one * (increaseScaleAmount * Time.deltaTime);
+    }
+
+    // 逐渐修改透明度，直至销毁
     disappearTimer -= Time.deltaTime;
     if (disappearTimer <= 0)
     {
@@ -52,7 +68,8 @@ public class DamagePopup : MonoBehaviour
       _textMeshPro.color = _textColor;
     }
 
-    _moveVector = new Vector3(0.7f, 1f, 0f);
+    disappearTimer = DisappearTimerMax;
+    _moveVector = new Vector3(0.7f, 1f, 0f) * 10;
     _sortingOrder++;
     _textMeshPro.sortingOrder = _sortingOrder;
   }

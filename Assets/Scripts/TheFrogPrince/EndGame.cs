@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,12 +13,12 @@ public class EndGame : MonoBehaviour
     UIManager.Instance.HideUI("UI/ItemCollectorUI"); //
     Debug.Log("EndGame::HideUI...");
     AudioManager.Instance.Stop();
-    text.text = "SCORE: " + GameManager.Instance.Score;
+    text.text = "SCORE: " + TheFrogPrinceProxy.Instance.Score;
     restartBtn.onClick.AddListener(delegate
     {
       SceneManager.LoadScene(SceneUIName.Level1);
-      GameManager.Instance.Score = 0;
-      GameManager.Instance.TempScore = 0;
+      TheFrogPrinceProxy.Instance.Score = 0;
+      TheFrogPrinceProxy.Instance.TempScore = 0;
     });
     quitBtn.onClick.AddListener(delegate { Application.Quit(); });
   }

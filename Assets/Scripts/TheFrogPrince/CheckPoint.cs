@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CheckPoint : MonoBehaviour
 {
   private AudioSource _audio;
-  private bool _levelComplete = false;
+  private bool _levelComplete;
 
   public void Start()
   {
@@ -19,8 +16,8 @@ public class CheckPoint : MonoBehaviour
     if (other.gameObject.name == "Player" && !_levelComplete)
     {
       // 每关到达终点时候，再计算总分
-      GameManager.Instance.Score += GameManager.Instance.TempScore;
-      GameManager.Instance.TempScore = 0;
+      TheFrogPrinceProxy.Instance.Score += TheFrogPrinceProxy.Instance.TempScore;
+      TheFrogPrinceProxy.Instance.TempScore = 0;
       _audio?.Play();
       _levelComplete = true;
       Invoke("CompleteLevel", 2f);

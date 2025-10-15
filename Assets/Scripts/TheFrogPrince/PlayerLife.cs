@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 /**
  * 角色声明周期，死亡处理和复活
@@ -11,14 +7,19 @@ using UnityEngine.Serialization;
 public class PlayerLife : MonoBehaviour
 {
   public AudioSource deathSound;
+  private Animator _anim;
 
   private Rigidbody2D _rb;
-  private Animator _anim;
 
   public void Start()
   {
     _rb = GetComponent<Rigidbody2D>();
     _anim = GetComponent<Animator>();
+  }
+
+  private void Update()
+  {
+    if (transform.position.y < -10) RestartLevel();
   }
 
   private void OnCollisionEnter2D(Collision2D other)
@@ -39,14 +40,6 @@ public class PlayerLife : MonoBehaviour
   private void RestartLevel()
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    MessageCenter.Dispatch(GameEvent.Cherries, GameManager.Instance.Score); // 死亡重置分数
-  }
-
-  private void Update()
-  {
-    if (transform.position.y < -10)
-    {
-      RestartLevel();
-    }
+    MessageCenter.Dispatch(GameEvent.Cherries, TheFrogPrinceProxy.Instance.Score); // 死亡重置分数
   }
 }

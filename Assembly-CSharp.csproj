@@ -54,7 +54,6 @@
     <Compile Include="Assets\Scripts\def\GameLayer.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\TheFrogPrince\WayPointFollower.cs" />
-    <Compile Include="Assets\Scripts\TheFrogPrince\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolObject.cs" />
     <Compile Include="Assets\Scripts\RpgGame\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolManager.cs" />
@@ -81,6 +80,7 @@
     <Compile Include="Assets\Scripts\TheFrogPrince\EndGame.cs" />
     <Compile Include="Assets\Scripts\RpgGame\DamagePopupMgr.cs" />
     <Compile Include="Assets\Scripts\Singleton\Singleton.cs" />
+    <Compile Include="Assets\Scripts\TheFrogPrince\TheFrogPrinceProxy.cs" />
     <Compile Include="Assets\Scripts\def\SoundType.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

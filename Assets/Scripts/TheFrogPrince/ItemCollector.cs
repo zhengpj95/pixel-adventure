@@ -1,16 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 /**
  * 收集
  */
 public class ItemCollector : MonoBehaviour
 {
-  private int _cherries = 0;
+  private int _cherries;
 
   private void OnTriggerEnter2D(Collider2D other)
   {
@@ -18,8 +13,8 @@ public class ItemCollector : MonoBehaviour
     {
       Destroy(other.gameObject);
       _cherries++;
-      MessageCenter.Dispatch(GameEvent.Cherries, GameManager.Instance.Score + _cherries);
-      GameManager.Instance.TempScore = _cherries;
+      MessageCenter.Dispatch(GameEvent.Cherries, TheFrogPrinceProxy.Instance.Score + _cherries);
+      TheFrogPrinceProxy.Instance.TempScore = _cherries;
     }
   }
 }

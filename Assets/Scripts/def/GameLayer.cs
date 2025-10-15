@@ -11,4 +11,5 @@ public static class GameLayer
   public const int Water = 4;
   public const int UI = 5;
   public const int Ground = 6;
+  public const int Player = 7;
 }

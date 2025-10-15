@@ -14,10 +14,12 @@ public class DetectionZone : MonoBehaviour
 
   private void Update()
   {
+    // 检测某个圆形范围内是否存在碰撞体（Collider2D）。指定检测的层（Layer），默认检测所有层。
     var c2d = Physics2D.OverlapCircle(transform.position, viewRadius, layerMask);
     if (c2d) DetectedObj = c2d;
   }
 
+  // 敌人画个圆，查看侦测范围
   private void OnDrawGizmos()
   {
     Gizmos.DrawWireSphere(transform.position, viewRadius);

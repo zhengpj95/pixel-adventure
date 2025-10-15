@@ -12,6 +12,7 @@ public class PlayerSword : MonoBehaviour
     _position = transform.localPosition;
   }
 
+  // 攻击动作触发伤害效果
   private void OnTriggerEnter2D(Collider2D other)
   {
     var damageable = other.GetComponent<IDamageable>();
@@ -19,7 +20,6 @@ public class PlayerSword : MonoBehaviour
     {
       var position = transform.parent.position;
       Vector2 direction = other.transform.position - position;
-
 
       // 伤害飘字
       var damage = Random.Range(1, 10);
@@ -30,6 +30,7 @@ public class PlayerSword : MonoBehaviour
     }
   }
 
+  // 处理玩家剑的触发攻击范围，玩家向右则在右，向左则在左。
   public void IsFacingRight(bool isRight)
   {
     if (isRight)

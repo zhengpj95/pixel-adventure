@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\TheFrogPrince\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\RpgGame\DamageableCharacter.cs" />
+    <Compile Include="Assets\Scripts\RpgGame\EnemyMgr.cs" />
     <Compile Include="Assets\Scripts\Launcher\LoadingUI.cs" />
     <Compile Include="Assets\Scripts\def\GameTag.cs" />
     <Compile Include="Assets\Scripts\RpgGame\IDamageable.cs" />

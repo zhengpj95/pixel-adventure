@@ -8,7 +8,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
   private bool _targetable;
 
-  private int Health
+  public int Health
   {
     get => health;
     set
@@ -33,6 +33,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     {
       _targetable = value;
       if (!_targetable) _rigidbody.simulated = false; // 该刚体 不再参与任何物理计算。角色死亡后不再响应碰撞
+      else _rigidbody.simulated = true;
     }
   }
 
@@ -50,5 +51,6 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
   private void OnObjectDestroyed()
   {
     Destroy(gameObject);
+    MessageCenter.Dispatch(GameEvent.EnemyDeath);
   }
 }

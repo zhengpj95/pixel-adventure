@@ -26,7 +26,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     }
   }
 
-  private bool Targetable
+  // 设置不响应碰撞
+  public bool Targetable
   {
     get => _targetable;
     set
@@ -50,7 +51,14 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
   private void OnObjectDestroyed()
   {
-    Destroy(gameObject);
-    MessageCenter.Dispatch(GameEvent.EnemyDeath);
+    if (gameObject.CompareTag(GameTag.Player))
+    {
+      Destroy(gameObject);
+    }
+    else
+    {
+      PoolManager.Instance.Release(gameObject.GetComponent<EnemyMovement>());
+      MessageCenter.Dispatch(GameEvent.EnemyDeath);
+    }
   }
 }

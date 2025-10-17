@@ -13,10 +13,8 @@ public interface IPoolable
  */
 public class PoolObject<T> where T : MonoBehaviour
 {
+  private readonly Queue<T> _pool = new();
   private readonly T _prefab;
-  private readonly Queue<T> _pool = new Queue<T>();
-
-  public int Count => _pool.Count;
 
   public PoolObject(T prefab, int initialCount)
   {
@@ -30,15 +28,14 @@ public class PoolObject<T> where T : MonoBehaviour
     }
   }
 
+  public int Count => _pool.Count;
+
   public T Alloc(Transform parent = null)
   {
     var obj = _pool.Count > 0 ? _pool.Dequeue() : Object.Instantiate(_prefab, parent, false);
 
     obj.gameObject.SetActive(true);
-    if (parent)
-    {
-      obj.transform.SetParent(parent, worldPositionStays: false);
-    }
+    if (parent) obj.transform.SetParent(parent, false);
 
     ResetObject(obj);
     return obj;
@@ -49,10 +46,7 @@ public class PoolObject<T> where T : MonoBehaviour
     obj.gameObject.SetActive(false);
 
     // 回到默认父节点
-    if (defaultParent)
-    {
-      obj.transform.SetParent(defaultParent, worldPositionStays: false);
-    }
+    if (defaultParent) obj.transform.SetParent(defaultParent, false);
 
     ResetObject(obj);
     _pool.Enqueue(obj);
@@ -66,9 +60,6 @@ public class PoolObject<T> where T : MonoBehaviour
     // obj.transform.localScale = Vector3.one;
 
     // 如果对象实现了 IPoolable 接口，可调用自定义重置
-    if (obj is IPoolable poolObj)
-    {
-      poolObj.OnReset();
-    }
+    if (obj is IPoolable poolObj) poolObj.OnReset();
   }
 }

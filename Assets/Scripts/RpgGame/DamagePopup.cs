@@ -48,7 +48,8 @@ public class DamagePopup : MonoBehaviour
 
   public static DamagePopup Create(Vector3 position, int damageValue, bool isCriticalHit = false)
   {
-    var damagePopupTransform = Instantiate(DamagePopupMgr.Instance.damagePopup, position, quaternion.identity);
+    var damagePopupTransform = Instantiate(DamagePopupMgr.Instance.damagePopup, position, quaternion.identity,
+      DamagePopupMgr.Instance.damagePopupParent);
     var damagePopup = damagePopupTransform.GetComponent<DamagePopup>();
     damagePopup.SetUp(damageValue, isCriticalHit);
     return damagePopup;

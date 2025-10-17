@@ -1,20 +1,23 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IPoolable
 {
   public float moveSpeed = 20f;
 
   private Animator _animator;
+  private DamageableCharacter _character;
   private Rigidbody2D _rb2d;
   private SpriteRenderer _sprite;
   private DetectionZone _zone;
 
-  private void Start()
+  private void Awake()
   {
     _rb2d = GetComponent<Rigidbody2D>();
     _sprite = GetComponent<SpriteRenderer>();
     _animator = GetComponent<Animator>();
     _zone = GetComponent<DetectionZone>();
+    _character = GetComponent<DamageableCharacter>();
   }
 
   private void FixedUpdate()
@@ -60,6 +63,19 @@ public class EnemyMovement : MonoBehaviour
       var damage = Random.Range(1, 10);
       damageable.OnHit(damage, force);
     }
+  }
+
+  // 对象池获取时候，重置一下
+  public void OnReset()
+  {
+    _character.Targetable = true;
+    OnWalkStop();
+  }
+
+  // 设置血量
+  public void InitHp(int hp)
+  {
+    _character.health = hp;
   }
 
   private void OnWalk()

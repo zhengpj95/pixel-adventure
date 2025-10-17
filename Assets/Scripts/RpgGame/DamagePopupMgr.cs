@@ -3,6 +3,7 @@ using UnityEngine;
 public class DamagePopupMgr : SingletonMono<DamagePopupMgr>
 {
   public Transform damagePopup;
+  public Transform damagePopupParent;
 
   // // 测试鼠标点击处飘字，对象上需要添加Player Input
   // private void OnFire()

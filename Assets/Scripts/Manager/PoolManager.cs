@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,25 +18,37 @@ public class PoolManager : SingletonMono<PoolManager>
   public void CreatePool<T>(T prefab, int initialCount) where T : MonoBehaviour
   {
     var key = prefab.name;
-    if (!_pools.ContainsKey(key))
-    {
-      _pools[key] = new PoolObject<T>(prefab, initialCount);
-    }
+    if (!_pools.ContainsKey(key)) _pools[key] = new PoolObject<T>(prefab, initialCount);
   }
 
-  // 获取对象，可指定父节点
-  public T Alloc<T>(T prefab, Transform parent = null) where T : MonoBehaviour
+  public T Alloc<T>(T prefab) where T : MonoBehaviour
   {
     var key = prefab.name;
-    if (_pools.TryGetValue(key, out var pool))
-    {
-      return ((PoolObject<T>)pool).Alloc(parent);
-    }
+    if (_pools.TryGetValue(key, out var pool)) return ((PoolObject<T>)pool).Alloc();
 
-    // 没有池时自动创建一个
+    var singlePool = new PoolObject<T>(prefab, 1);
+    _pools[key] = singlePool;
+    return singlePool.Alloc();
+  }
+
+  public T Alloc<T>(T prefab, Transform parent) where T : MonoBehaviour
+  {
+    var key = prefab.name;
+    if (_pools.TryGetValue(key, out var pool)) return ((PoolObject<T>)pool).Alloc(parent);
+
     var singlePool = new PoolObject<T>(prefab, 1);
     _pools[key] = singlePool;
     return singlePool.Alloc(parent);
+  }
+
+  public T Alloc<T>(T prefab, Transform parent, bool worldPositionStays) where T : MonoBehaviour
+  {
+    var key = prefab.name;
+    if (_pools.TryGetValue(key, out var pool)) return ((PoolObject<T>)pool).Alloc(parent, worldPositionStays);
+
+    var singlePool = new PoolObject<T>(prefab, 1);
+    _pools[key] = singlePool;
+    return singlePool.Alloc(parent, worldPositionStays);
   }
 
   // 归还对象
@@ -45,12 +56,8 @@ public class PoolManager : SingletonMono<PoolManager>
   {
     var key = obj.name.Replace("(Clone)", "").Trim();
     if (_pools.TryGetValue(key, out var pool))
-    {
       ((PoolObject<T>)pool).Release(obj, defaultParent);
-    }
     else
-    {
       Destroy(obj.gameObject); // 没有池就直接销毁
-    }
   }
 }

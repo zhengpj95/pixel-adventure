@@ -30,12 +30,12 @@ public class PoolObject<T> where T : MonoBehaviour
 
   public int Count => _pool.Count;
 
-  public T Alloc(Transform parent = null)
+  public T Alloc(Transform parent = null, bool worldPositionStays = false)
   {
-    var obj = _pool.Count > 0 ? _pool.Dequeue() : Object.Instantiate(_prefab, parent, false);
+    var obj = _pool.Count > 0 ? _pool.Dequeue() : Object.Instantiate(_prefab, parent, worldPositionStays);
 
     obj.gameObject.SetActive(true);
-    if (parent) obj.transform.SetParent(parent, false);
+    if (parent) obj.transform.SetParent(parent, worldPositionStays);
 
     ResetObject(obj);
     return obj;

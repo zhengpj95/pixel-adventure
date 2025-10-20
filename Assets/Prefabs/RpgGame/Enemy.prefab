@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
+  hpBar: {fileID: 7011534217058158656}
 --- !u!114 &8709929978433660145
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using Random = UnityEngine.Random;
 public class EnemyMovement : MonoBehaviour, IPoolable
 {
   public float moveSpeed = 20f;
+  public GameObject hpBar;
 
   private Animator _animator;
   private DamageableCharacter _character;
@@ -79,6 +80,8 @@ public class EnemyMovement : MonoBehaviour, IPoolable
   {
     _character.health = hp;
     _hpBar.InitHp(hp);
+    if (hpBar)
+      hpBar.SetActive(true);
   }
 
   public void UpdateHp(int hp)
@@ -103,6 +106,9 @@ public class EnemyMovement : MonoBehaviour, IPoolable
 
   public void OnDie()
   {
+    if (hpBar)
+      hpBar.SetActive(false);
+
     _animator.SetTrigger("isDie");
   }
 }

@@ -54,6 +54,7 @@
     <Compile Include="Assets\Scripts\Def\SoundType.cs" />
     <Compile Include="Assets\Scripts\Modules\RpgGame\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Core\Manager\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Modules\RpgGame\HpBar.cs" />
     <Compile Include="Assets\Scripts\Modules\RpgGame\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Modules\TheFrogPrince\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\Def\GameEvent.cs" />

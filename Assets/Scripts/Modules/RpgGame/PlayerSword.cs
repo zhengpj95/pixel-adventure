@@ -25,6 +25,8 @@ public class PlayerSword : MonoBehaviour
       var damage = Random.Range(1, 10);
       var isCritical = Random.Range(0, 100) < 30;
       if (isCritical) damage *= 2;
+      var move = other.GetComponent<EnemyMovement>();
+      move?.UpdateHp(damage);
       damageable.OnHit(damage, direction.normalized * 1000);
       DamagePopup.Create(other.transform.position, damage, isCritical);
     }

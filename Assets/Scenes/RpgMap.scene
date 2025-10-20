@@ -4157,7 +4157,7 @@ GameObject:
   - component: {fileID: 1930452631}
   m_Layer: 0
   m_HasEditorInfo: 1
-  m_Name: DamagePopupMgr
+  m_Name: EnemyMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4206,7 +4206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5818440191698093317, guid: 137f96001f176ea47a32beb437879cbd, type: 3}
   interval: 3
-  maxEnemies: 5
+  maxEnemies: 3
   enemyParent: {fileID: 1976208774}
 --- !u!1 &1976208773
 GameObject:
@@ -19611,7 +19611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6411811001026602618, guid: 9c18607745e538d48a46f04c863d3ae3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6411811001026602618, guid: 9c18607745e538d48a46f04c863d3ae3, type: 3}
       propertyPath: m_LocalPosition.z

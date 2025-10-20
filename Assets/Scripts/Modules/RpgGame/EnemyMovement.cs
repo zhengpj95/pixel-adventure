@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour, IPoolable
 
   private Animator _animator;
   private DamageableCharacter _character;
+  private HpBar _hpBar;
   private Rigidbody2D _rb2d;
   private SpriteRenderer _sprite;
   private DetectionZone _zone;
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour, IPoolable
     _animator = GetComponent<Animator>();
     _zone = GetComponent<DetectionZone>();
     _character = GetComponent<DamageableCharacter>();
+    _hpBar = GetComponent<HpBar>();
   }
 
   private void FixedUpdate()
@@ -76,6 +78,12 @@ public class EnemyMovement : MonoBehaviour, IPoolable
   public void InitHp(int hp)
   {
     _character.health = hp;
+    _hpBar.InitHp(hp);
+  }
+
+  public void UpdateHp(int hp)
+  {
+    _hpBar.SetHp(Mathf.Max(0, _character.Health - hp));
   }
 
   private void OnWalk()
